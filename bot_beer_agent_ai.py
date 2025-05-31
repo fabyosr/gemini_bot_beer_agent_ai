@@ -50,7 +50,6 @@ async def call_agent(agent: Agent, message_text: str) -> str:
 ##########################################
 
 async def agente_garimpeiro(topico, data_de_hoje):
-
     agent_garimpeiro = Agent(
         name="agente_core_antifraude",
         model="gemini-2.0-flash",
@@ -167,19 +166,6 @@ async def async_function_agente_sommelier(result_agent_agente_garimpeiro):
 
 # Configuração inicial da página
 st.set_page_config(page_title="Chatbot Colaborativo", page_icon="🤖", layout="wide")
-
-# Função para simular o processamento do Agente 1 (Analista de Texto)
-def agente_analista(prompt):
-    palavras = prompt.split()
-    if len(palavras) > 10:
-        resumo = " ".join(palavras[:10]) + "... (resumido)"
-    else:
-        resumo = prompt
-    return f"**Resumo do Analista**: {resumo}"
-
-# Função para simular o processamento do Agente 2 (Gerador de Insights)
-def agente_insights(resumo):
-    return f"**Insight Criativo**: Com base no resumo '{resumo}', parece que você está buscando inspiração! Aqui vai uma ideia: transforme isso em um projeto criativo com um toque de inovação!"
 
 # Inicializar o estado da sessão para armazenar o histórico
 if "historico" not in st.session_state:
