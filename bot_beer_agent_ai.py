@@ -1,7 +1,7 @@
-import streamlit as st
+import asyncio
+import asyncioimport streamlit as st
 import time
 from datetime import datetime
-import uuid
 
 # Configura a API Key do Google Gemini
 from google import genai
@@ -223,7 +223,7 @@ col1, col2 = st.columns([1, 3], gap="small")  # Ajuste as proporções se necess
 
 # Colocar a imagem na primeira coluna
 with col1:
-    st.image("bot_beer_h240.png", caption="Bot Beer !", use_column_width=False)
+    st.image("bot_beer_h240.png", caption="Bot Beer !", use_container_width=False)
 
 # Título do app
 with col2:
