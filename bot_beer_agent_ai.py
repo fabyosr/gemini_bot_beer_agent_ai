@@ -180,6 +180,7 @@ st.markdown("""
 <style>
     .chat-container {
         background-color: #f0f2f6;
+        color: #000000;
         padding: 20px;
         border-radius: 10px;
         max-height: 500px;
@@ -191,14 +192,17 @@ st.markdown("""
         margin: 5px;
         border-radius: 5px;
         background-color: #ffffff;
+        color: #000000;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     .user-message {
         background-color: #e6f3ff;
+        color: #000000;
         text-align: right;
     }
     .agent-message {
         background-color: #d4edda;
+        color: #000000;
     }
     .timestamp {
         font-size: 0.8em;
