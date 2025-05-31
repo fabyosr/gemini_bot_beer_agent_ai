@@ -1,6 +1,7 @@
 import asyncio
 import streamlit as st
 import time
+import uuid
 from datetime import datetime
 
 # Configura a API Key do Google Gemini
