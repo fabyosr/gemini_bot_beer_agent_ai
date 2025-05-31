@@ -20,6 +20,7 @@ GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 # Configura o cliente da SDK do Gemini
 client = genai.Client()
 MODEL_ID = "gemini-2.0-flash"
+data_de_hoje = date.today().strftime("%d/%m/%Y")
 
 # Cria um serviço de sessão em memória
 session_service = InMemorySessionService()
@@ -160,13 +161,13 @@ async def agente_sommelier(resultados_garimpados):
     return busca_result
 
 async def async_function_agente_garimpeiro(topico, data_de_hoje):
-    return await agente_garimpeiro(topico ,data_de_hoje)
+    return await agente_garimpeiro(topico, data_de_hoje)
 
 async def async_function_agente_sommelier(result_agent_agente_garimpeiro):
     return await agente_sommelier(result_agent_agente_garimpeiro)
 
 # Configuração inicial da página
-st.set_page_config(page_title="Chatbot Colaborativo", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="Bot Beeer, seu agente cervejeiro", page_icon="🤖", layout="wide")
 
 # Inicializar o estado da sessão para armazenar o histórico
 if "historico" not in st.session_state:
@@ -224,7 +225,7 @@ col1, col2 = st.columns([1, 3], gap="small")  # Ajuste as proporções se necess
 
 # Colocar a imagem na primeira coluna
 with col1:
-    st.image("bot_beer_h240.png", caption="Bot Beer !", use_container_width=False)
+    st.image("bot_beer_h180.png", caption="Bot Beer !", use_container_width=False)
 
 # Título do app
 with col2:
