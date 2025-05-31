@@ -4,10 +4,7 @@ from datetime import datetime
 import uuid
 
 # Configura a API Key do Google Gemini
-import os
-from google.colab import userdata
 from google import genai
-from IPython.display import HTML, Markdown
 from google.adk.agents import Agent
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
@@ -15,13 +12,9 @@ from google.adk.tools import google_search
 from google.genai import types  # Para criar conteúdos (Content e Part)
 from datetime import date
 import textwrap # Para formatar melhor a saída de texto
-from IPython.display import display, Markdown # Para exibir texto formatado no Colab
 import requests # Para fazer requisições HTTP
-import warnings
 
-# SETUP GenAI
-warnings.filterwarnings("ignore")
-os.environ["GOOGLE_API_KEY"] = userdata.get('GOOGLE_API_KEY')
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"] 
 
 # Configura o cliente da SDK do Gemini
 client = genai.Client()
